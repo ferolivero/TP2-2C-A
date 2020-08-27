@@ -30,7 +30,7 @@ let minutes = 0;
 let seconds = 0;
 reduxElementsArray.forEach(x => {
   console.log('Elemento', x);
-  let dataTimeString = x.substr(x.indexOf(searchValue) + searchValue.length + 2, 4)
+  let dataTimeString = x.substring(x.indexOf(searchValue) + searchValue.length + 2, x.lastIndexOf("\""))
   console.log('Tiempo del elemento:' ,dataTimeString);
   let dataTime = dataTimeString.split(':');
   console.log('Minutos:', dataTime[0]);
