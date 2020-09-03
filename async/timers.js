@@ -27,3 +27,19 @@ setInterval(() => {
 // Hola mundo 3 <- en 3 seg
 // ..........
 // Restriccion: Solo se puede uar const (no let, ni var)
+
+function intervalFunction(intervalTimer, iteration) {
+    const interval = setInterval(() => {
+        consoleLog(interval, iteration)
+    }, intervalTimer + 1000);
+}
+
+function consoleLog(interval, iteration){
+    setTimeout(() => {
+        console.log(`Hola Mundo!! ${iteration}`);
+        clearInterval(interval);
+        intervalFunction(interval._repeat, iteration + 1)
+    }, 0);
+}
+
+intervalFunction(0, 1);
